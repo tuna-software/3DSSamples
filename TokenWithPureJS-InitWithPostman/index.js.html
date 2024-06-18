@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cartão de Crédito</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="creditCard-form-container">
+        <form id="creditCardForm" onsubmit="handleSubmit(event)">
+            <label for="sessionID" class="highlight">Session ID:</label>
+            <input type="text" id="sessionID" name="sessionID" required>
+            <br>
+            <label for="cardHolderName">Nome no Cartão:</label>
+            <input type="text" id="cardHolderName" name="cardHolderName" required>
+            <br>
+            <label for="cardNumber">Número do Cartão:</label>
+            <input type="text" id="cardNumber" name="cardNumber" required>
+            <br>
+            <label for="validity">Validade (MM/AA):</label>
+            <input type="text" id="validity" name="validity" placeholder="MM/AA" required>
+            <br>
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required>
+            <br>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <div id="3ds-form-container" style="display: none;">
+        <form id="3dsForm" onsubmit="handle3DSSubmit(event)">
+            <label for="url">URL:</label>
+            <input type="text" id="url" name="url" required>
+            <br>
+            <label for="accessToken">Access Token:</label>
+            <input type="text" id="accessToken" name="accessToken" required>
+            <br>
+            <label for="paRequest">PARequest:</label>
+            <input type="text" id="paRequest" name="paRequest" required>
+            <br>
+            <button type="submit">Render 3DS Challenge</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
