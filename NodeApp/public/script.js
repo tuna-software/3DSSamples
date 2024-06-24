@@ -179,7 +179,7 @@ const injectDataCollectionFrame = (deviceDataCollectionUrl, accessToken, dataCol
     if (form) form.submit();
 
     window.addEventListener('message', function (event) {
-        if (event.origin === 'https://centinelapi.cardinalcommerce.com') {
+        if (event.origin === new URL(deviceDataCollectionUrl).origin) {
             const data = JSON.parse(event.data);
             if (data.Status === true) {
                 console.log('Data collection ready');
