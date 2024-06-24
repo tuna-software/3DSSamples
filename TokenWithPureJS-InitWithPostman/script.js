@@ -28,6 +28,7 @@ const displayFormattedJSON = (response) => {
     const formattedJSON = JSON.stringify(response, null, 4);
 
     const preElement = document.createElement('pre');
+    preElement.className = 'json';
     preElement.textContent = formattedJSON;
 
     const container = document.createElement('div');

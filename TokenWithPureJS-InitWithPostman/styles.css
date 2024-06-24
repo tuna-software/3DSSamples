@@ -47,3 +47,15 @@ button:hover {
 #3ds-form-container {
     width: 300px;
 }
+
+pre.json {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: #333;
+    background-color: #f7f7f7;
+    border: 1px solid #bfb8b8;
+    padding: 10px;
+    border-radius: 5px;
+    overflow: auto;
+    width: 80%;
+}

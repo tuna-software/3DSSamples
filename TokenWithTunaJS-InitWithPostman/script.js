@@ -1,6 +1,5 @@
 var tuna;
 
-
 const displayFormattedJSON = (response) => {
     const formattedJSON = JSON.stringify(response, null, 4);
     const preElement = document.createElement('pre');
@@ -11,11 +10,11 @@ const displayFormattedJSON = (response) => {
 checkoutCallback = response => {
     console.log(response);
     displayFormattedJSON(response);
-    if(response?.tokenData?.authenticationInformation){
-        let {accessToken, deviceDataCollectionUrl} = response.tokenData.authenticationInformation;
+    if (response?.tokenData?.authenticationInformation) {
+        let { accessToken, deviceDataCollectionUrl } = response.tokenData.authenticationInformation;
 
-        tuna.create3DSDataCollectionFrame({accessToken, deviceDataCollectionUrl}, success => {
-            if(success){
+        tuna.create3DSDataCollectionFrame({ accessToken, deviceDataCollectionUrl }, success => {
+            if (success) {
                 $("#defaultFormRoot").hide();
                 $("#challengeDiv").show();
             }
@@ -36,7 +35,7 @@ generateDefaultForm = async _ => {
 }
 
 submitChallenge = _ => {
-    
+
     var url = $('#challengeDiv #url').val();
     var token = $('#challengeDiv #token').val();
     var paRequest = $('#challengeDiv #paRequest').val();
