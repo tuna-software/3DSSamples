@@ -206,7 +206,7 @@ window.onload = () => {
     for (const pair of pairs) {
         const [key, value] = pair.split("=");
         if (decodeURIComponent(key) === 'sessionID') {
-            sessionId = value+"==";
+            sessionId = value;
             break;
         }
     }
